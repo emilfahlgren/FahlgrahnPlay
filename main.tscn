@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=3 uid="uid://cg73r08sr2o5i"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_pidxm"]
+[ext_resource type="AudioStream" uid="uid://dg4raswm5m6pi" path="res://chill.mp3" id="2_satqq"]
+[ext_resource type="Texture2D" uid="uid://c4jlfdlpd788i" path="res://progress_bar_background.png" id="3_dk6hn"]
+[ext_resource type="Texture2D" uid="uid://dscmxrmgu1382" path="res://progress_bar.png" id="4_jm21r"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pidxm")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.145098, 0.294118, 0.411765, 1)
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -50.0
+offset_right = 200.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "Play/Pause"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_satqq")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -304.0
+offset_top = -120.0
+offset_right = 303.0
+offset_bottom = -80.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_under = ExtResource("3_dk6hn")
+texture_progress = ExtResource("4_jm21r")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
