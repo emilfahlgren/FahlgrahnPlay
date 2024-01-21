@@ -47,12 +47,24 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -304.0
-offset_top = -120.0
+offset_top = -118.0
 offset_right = 303.0
 offset_bottom = -80.0
 grow_horizontal = 2
 grow_vertical = 0
 texture_under = ExtResource("3_dk6hn")
 texture_progress = ExtResource("4_jm21r")
+
+[node name="TimeLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 272.0
+offset_top = -65.0
+offset_right = 414.0
+offset_bottom = -25.0
+grow_vertical = 0
+text = "0:00"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
